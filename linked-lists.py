@@ -41,8 +41,9 @@ def main():
     for i in range(1,100000000):
         iter.next = Node(i,None)
         iter = iter.next
-    
+
     #Now remove same 853 from LinkedList
+
     print("Linked List Removal")
     start_time = datetime.now()
     remove_node(head,853)
