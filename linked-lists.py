@@ -1,4 +1,6 @@
-#Linked Lists
+"""
+This module provides basic functions and implementations for testing Linked Lists in python
+"""
 from datetime import datetime
 
 
