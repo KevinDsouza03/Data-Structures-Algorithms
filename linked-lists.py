@@ -2,8 +2,6 @@
 This module provides basic functions and implementations for testing Linked Lists in python
 """
 from datetime import datetime
-
-
 class Node:
     def __init__(self, val = 0, next = None):
         self.val = val
@@ -25,6 +23,24 @@ def remove_node(head, val):
         print(f"An error occurred: {e}")
         return head
     
+def insert_end(head, val): #More like append node
+    dummy = Node(val)
+    iter = head
+    try:
+        while iter.next != None:
+            iter = iter.next
+        #When iter.next == None, meaning we are at the end of the Linked List, insert
+        iter.next = dummy
+        return head
+    except Exception as e:
+        print(f"Error has occured, node could not be added")
+        return head
+
+def insert_beginning(head,val):
+    dummy = Node(val,head)
+    head = dummy
+    return head
+
 def main():
     arr = list(range(100000000))
 
