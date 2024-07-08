@@ -11,9 +11,9 @@ def remove_node(head, val):
     dummy = Node(next=head)
     iter = dummy
     try:
-        while iter.next and iter.next.val != val:
+        while iter.next and iter.next.val != val: 
             iter = iter.next
-        if iter.next and iter.next.val == val:
+        if iter.next and iter.next.val == val: #removed head
             iter.next = iter.next.next
             return dummy.next
         else:
@@ -33,13 +33,26 @@ def insert_end(head, val): #More like append node
         iter.next = dummy
         return head
     except Exception as e:
-        print(f"Error has occured, node could not be added")
+        print(f"Error has occured, node could not be added {e}")
         return head
 
 def insert_beginning(head,val):
     dummy = Node(val,head)
     head = dummy
     return head
+
+
+def search(head,val):
+    iter = head
+    try:
+        while iter is not None:
+            if iter.val == val:
+                return iter
+            iter = iter.next
+        return None
+    except Exception as e:
+        print(f"Error has occured: {e}")
+        return head
 
 def main():
     arr = list(range(100000000))
